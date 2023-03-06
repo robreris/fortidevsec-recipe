@@ -1,23 +1,47 @@
 ---
-title: "AWS Modernization Workshop Base Template" # MODIFY THIS TO BE THE TITLE OF YOUR WORKSHOP
+title: "FortiDevSec Workshop" # MODIFY THIS TO BE THE TITLE OF YOUR WORKSHOP
 chapter: true
 weight: 1
 ---
 
-# AWS Modernization Workshop Base Template <!-- CHANGE THIS TO BE THE TITLE OF YOUR WORKSHOP -->
+# FortiDevSec Workshop <!-- CHANGE THIS TO BE THE TITLE OF YOUR WORKSHOP -->
 <br>
-![Partner Logo](/images/AWS_Logo.png)  <!-- ADD YOUR PARTNER LOGO HERE USING THE INSTRUCTIONS BELOW -->
 <br>
 
-## Welcome
+## About TEC Recipes
 
-**REMOVE:** By utilizing this template, you can create your workshops with little coding knowledge. These workshops use the Hugo Framework and the hugo-theme-learn submodules. By writing content using simple markdown code, Hugo creates the necessary HTML for you. Examples of code, files, and folders here can be modified, copied, pasted, and deleted as necessary. Block sections of instruction that should be removed will be explicitly marked with **REMOVE**. Other sections should be modified to reflect the workshop. For guidance on how to utilize the Hugo framework and markdown, please refer to the module titled "Hugo Framework And Markdown". That module can be removed once building the workshop is complete.
+TEChnical Recipes provide the learner with the opportunity to put into practice newly developed skills in an easy to launch environment that can be used for customer engagements.  At a minimum a TEChnical Recipe will include the following:
 
-This paragraph block can give the high level overview of the learning goals and use cases of what the workshop is trying to teach.
+* A use case description
+* An integrated lab and demo environment
 
-This paragraph block can be used to introduce the company and how the solution being taught addresses specific issues.
+  * Informational call-outs for key points to discuss or highlight to a customer
+  * Questions that could be asked while giving the TEChnical Recipe as a demo
+  * Points of value that relate the business value to the technical feature
+* A reference architecture(s)
 
-**REMOVE:** Every introduction page should include the following warning label.
+Optional components may be included for certain use cases
+
+The TEChnical Recipe will not be a completely, self-contained learning experience for a single product.  A TEChnical Recipe will cover features and often multiple products where they relate to the use case of interest.
+
+Deployments will be automated for those tasks that are not salient to the learning or demonstration activity in the use case.  For example, for a TEChnical Recipe focused on Indicators of Compromise, the system may deploy a FortiGate and FortiAnalyzer with configurations for these systems.  However, the leaner will have to configure the Event Handlers for IOC setup.
+
+## FortiDevSec TEC Recipe
+
+Introduction:
+
+The realm of application security involves tools and techniques to protect applications from attacks and violations. Due to the huge advancement in hacking techniques and cyber-attack methodologies even modern complex applications contain unassessed security risks and vulnerabilities that may lead to substantial harm to your organization/business. Evaluating the security risks associated with applications and assessing the security weaknesses allows you to mitigate the potential risk to your organization with appropriate remedial measures.
+
+FortiDevSec is a cloud-based automated application security tool that performs intensive and comprehensive scans for an accurate vulnerability assessment of your application.
+
+The purpose of this TEChnical Recipe is to familiarize the learner with FortiDevSec, the various types of vulnerabilities it can help identify and remediate, and the ways in which it may be integrated into DevSecOps pipelines to enable such identification and remediation during and before deployment.
+
+## TEChnical Recipe Main Objectives
+
+* Set up the Github repository and configure a FortiDevSec application
+* Run a SAST scan locally on the vulnerable application
+* Run a DAST scan locally on the vulnerable application
+* Understand FortiDevSec integration with JIRA
 
 {{% notice warning %}}
 The examples and sample code provided in this workshop are intended to be consumed as instructional content. These will help you understand how various AWS services can be architected to build a solution while demonstrating best practices along the way. These examples are not intended for use in production environments.
