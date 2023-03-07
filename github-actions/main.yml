@@ -1,0 +1,19 @@
+name: "Run FortiDevSec Scan"
+run-name: Github Actions Testing
+on:
+  workflow_dispatch:
+
+env:
+  AWS_REGION: us-east-1
+
+jobs:
+  DeployStackAppAndScan:
+    runs-on: self-hosted
+    steps:
+      - name: Check out repo code
+        uses: actions/checkout@v2
+      - name: Run static, sca, secrets scans 
+        run: |
+          env | grep -E "GITHUB_ACTIONS|GITHUB_RUN_NUMBER|GITHUB_REF_NAME|GITHUB_SHA" > /tmp/env
+          docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest
+          docker run --rm --env-file /tmp/env --mount type=bind,source=${{ github.workspace }},target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest

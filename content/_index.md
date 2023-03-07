@@ -4,7 +4,7 @@ chapter: true
 weight: 1
 ---
 
-# FortiDevSec Workshop <!-- CHANGE THIS TO BE THE TITLE OF YOUR WORKSHOP -->
+# FortiDevSec Workshop 
 <br>
 <br>
 

@@ -26,10 +26,9 @@ git clone <url copied above>
 cd AWSGoat
 ```
 
-* Also, copy the Github Actions workflows from the tech recipe github-actions directory to your newly forked AWSGoat repository.
+* Also, retrieve the needed Github Actions workflows from the tech recipe github-actions directory to your newly forked AWSGoat repository.
 
 ```sh
-cp ~/technical-recipe/github-actions/* ~/AWSGoat/.github/workflows/
 ```
 
 * Now, navigate to the local AWSGoat repository and sync the changes with the remote.
