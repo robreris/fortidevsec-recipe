@@ -35,6 +35,3 @@ msbuild.wrn
 # Node Modules
 node_modules/
 
-# App deployment 
-ecs-app-params.json
-ecs-app-template.yml

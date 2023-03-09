@@ -1,0 +1,26 @@
+[
+        {
+                "ParameterKey": "ECRRepo",
+		"ParameterValue": "228122752878.dkr.ecr.us-east-1.amazonaws.com/workshop-app-test"
+	},
+        {
+                "ParameterKey": "ECRRepoName",
+		"ParameterValue": "workshop-app-test"
+	},
+	{
+		"ParameterKey": "KeyPair",
+		"ParameterValue": "fgt-kp"
+	},
+	{
+		"ParameterKey": "AppVPC",
+		"ParameterValue": "vpc-06cc8a38bba631898"
+	},
+	{
+		"ParameterKey": "AppSubnet",
+		"ParameterValue": "subnet-0ed50e4fdebfce0a3"
+	},
+	{
+		"ParameterKey": "AllowedCidr",
+		"ParameterValue": "0.0.0.0/0"
+	}
+]

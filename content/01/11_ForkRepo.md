@@ -29,6 +29,10 @@ cd AWSGoat
 * Also, retrieve the needed Github Actions workflows from the tech recipe github-actions directory to your newly forked AWSGoat repository.
 
 ```sh
+wget https://raw.githubusercontent.com/robreris/fortidevsec-recipe/main/github-actions/main.yml
+wget https://raw.githubusercontent.com/robreris/fortidevsec-recipe/main/github-actions/tf-apply-main.yml
+wget https://raw.githubusercontent.com/robreris/fortidevsec-recipe/main/github-actions/tf-destroy-main.yml
+cp main.yml tf-apply-main.yml tf-destroy.yml .github/workflows
 ```
 
 * Now, navigate to the local AWSGoat repository and sync the changes with the remote.
