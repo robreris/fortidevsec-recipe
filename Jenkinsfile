@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Run linter') {
             steps {
-                echo "Running linter..."
+                echo "Running linter test..."
                 sh 'cfn-lint $(pwd)/pipeline/cloudformation/*.yml'
             }
         }
