@@ -35,3 +35,4 @@ msbuild.wrn
 # Node Modules
 node_modules/
 
+taskcat_outputs

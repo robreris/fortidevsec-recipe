@@ -23,10 +23,11 @@ pipeline {
                 sh 'docker run --rm --env-file /tmp/env --mount type=bind,source=$PWD,target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest'
             }
         }
-        stage('Test Cloudformation Stack Build') {
-            when { expression { false } }
+        stage('Taskcat Test Deployment') {
             steps {
-                sh '/usr/bin/aws cloudformation create-stack --stack-name workshop-app-test --template-body file://$(pwd)/pipeline/cloudformation/ecs-app-template.yml --parameters file://$(pwd)/pipeline/cloudformation/ecs-app-params.json --capabilities CAPABILITY_NAMED_IAM --region us-east-1'
+               sh '''
+                 taskcat test run || true
+               '''
             }
         }
         stage('Run DAST scan') {

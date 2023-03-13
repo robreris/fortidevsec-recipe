@@ -1,0 +1,18 @@
+general:
+  s3_bucket: taskcat-test-rob
+  parameters:
+    ECRRepo: 228122752878.dkr.ecr.us-east-1.amazonaws.com/workshop-app-test
+    ECRRepoName: workshop-app-test
+    KeyPair: fgt-kp
+    AppVPC: vpc-06cc8a38bba631898
+    AppSubnet: subnet-0ed50e4fdebfce0a3
+    AllowedCidr: 0.0.0.0/0
+    ElasticIPAlloc: eipalloc-0459ec20d516228f2
+project:
+  name: workshop-app-test
+  regions:
+    - us-east-1
+  shorten_stack_name: true
+tests:
+  default:
+    template: ./pipeline/cloudformation/ecs-app-template.yml
