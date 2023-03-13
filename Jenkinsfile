@@ -5,13 +5,17 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
     }
     stages {
-        stage('Run linter') {
+        stage('Run linters...') {
             steps {
-                echo "Running linter test..."
+                echo "Running cfn-linter test..."
                 sh 'cfn-lint $(pwd)/pipeline/cloudformation/*.yml'
+                echo "Running cfn_nag_scan test...."
+                sh 'docker pull stelligent/cfn_nag:latest'
+                sh 'docker run -v $(pwd)/pipeline/cloudformation:/templates -t stelligent/cfn_nag /templates/ecs-app-template.yml'
             }
         }
         stage('Run SAST scan') {
+            when { expression { false } }
             steps {
                 echo "Running SAST scan..."
                 sh 'env | grep -E "JENKINS_HOME|BUILD_ID|GIT_BRANCH|GIT_COMMIT" > /tmp/env'
@@ -20,9 +24,7 @@ pipeline {
             }
         }
         stage('Test Cloudformation Stack Build') {
-            when {
-                expression { false }
-            }
+            when { expression { false } }
             steps {
                 sh '/usr/bin/aws cloudformation create-stack --stack-name workshop-app-test --template-body file://$(pwd)/pipeline/cloudformation/ecs-app-template.yml --parameters file://$(pwd)/pipeline/cloudformation/ecs-app-params.json --capabilities CAPABILITY_NAMED_IAM --region us-east-1'
             }

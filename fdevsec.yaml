@@ -9,6 +9,4 @@ scanners:
   - secret
   - sca
   - container
-
-languages:
-  - javascript
+  - iac
